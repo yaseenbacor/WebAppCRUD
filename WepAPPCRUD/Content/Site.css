@@ -1,0 +1,119 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+table td {
+    padding: 1em;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #464444;
+}
+
+th {
+    padding: 1em;
+    text-align: center;
+    background-color: #3f3fa2;
+    color: white;
+}
+
+td a, button{
+    background-color: #3f3fa2;
+    color: #ffffff;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 9px -2px grey;
+    text-align: center;
+    transition: box-shadow 250ms ease-in-out;
+    border: none;
+}
+
+    button a {
+        background-color: #3f3fa2;
+        color: #ffffff;
+    }
+
+    td a:last-child {
+        margin-right: 0em;
+    }
+
+    td a:hover, button:hover {
+        color: white;
+        box-shadow: 0 0 10px 3px grey;
+        text-decoration: none;
+    }
+
+    button a:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    #headerButton{
+        position: relative;
+        right: 3em;
+        margin-top: 3em;
+        float: right;
+    }
+
+.customContainer {
+    width: fit-content;
+    padding: 2em 4em;
+    position: relative;
+    transform: translate3d(-50%,0,0);
+    left: 50%;
+    background-color: #3f3fa2;
+    box-shadow: 0 0 10px -2px grey;
+    margin-top: 1em;
+    border-radius: 3px;
+    color: white;
+}
+
+    .position-relative{
+        position: relative;
+    }
+
+    .w-100{
+        width: 100%;
+    }
+
+    #editPage td{
+        background-color: transparent;
+        color: white;
+    }
+
+input {
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em 2em;
+    color: #3f3fa2;
+}
+
+    input:focus{
+        outline: none;
+    }
+
+.field-validation-error {
+    color: #d28080;
+}

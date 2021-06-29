@@ -1,0 +1,87 @@
+﻿@model WepAPPCRUD.Models.CRUDModel
+
+@{
+    ViewBag.Title = "AddEditUser";
+}
+
+<style type="text/css">
+    .topDiv {
+        width: 50%;
+        margin: 10px auto;
+        background-color: #f2f2f2;
+        text-align: center;
+        padding: 2%;
+    }
+
+    .innerDiv {
+        margin: 0 auto;
+        padding: 1%;
+        color: Gray;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    <div class="position-relative w-100" id="editPage">
+    <div class="customContainer">
+        <table>
+            <tr> <h2>Add/Edit User</h2></tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Name) :
+                </td>
+                <td>
+                    <div class="innerDiv">
+                        @Html.TextBoxFor(m => m.Name)
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.Surname) :
+                </td>
+                <td>
+                    <div class="innerDiv">
+                        @Html.TextBoxFor(m => m.Surname)
+                        @Html.ValidationMessageFor(m => m.Surname)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(m => m.CellphoneNo) :
+                </td>
+                <td>
+                    <div class="innerDiv">
+                        @Html.EditorFor(m => m.CellphoneNo)
+                        @Html.ValidationMessageFor(m => m.CellphoneNo)
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <div class="innerDiv">
+                        <input id="btnAdd" type="submit" value="@if (Model.IsEdit)
+                                                                {<text>Update</text>}
+                                                                else
+                                                                {<text>Add</text>}" style=" width:75px" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+        </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,79 @@
+﻿@model IEnumerable <WepAPPCRUD.Models.CRUDModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    .topDiv {
+        width: 50%;
+        margin: 10px auto;
+        background-color: #f2f2f2;
+        text-align: left;
+        padding: 2%;
+    }
+</style>
+
+<div class="container-fluid">
+            <fieldset>
+                <button id="headerButton">
+                    @Html.ActionLink("Add New user", "AddEditUser")
+                </button>
+            </fieldset>
+            <fieldset>
+                <table style="margin: 2% auto; padding: 5px; width: 90%">
+                    <tr style="background-color: #FFFACD">
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Surname
+                        </th>
+
+                        <th>
+                            CellphoneNo
+                        </th>
+
+                        <th>
+                            Manage
+                        </th>
+                    </tr>
+
+                    @{
+                        foreach (var item in Model)
+                        {
+                            <tr style="background-color: #FFFFF0">
+                                <td>
+                                    @item.Name
+                                </td>
+
+                                <td>
+                                    @item.Surname
+                                </td>
+
+                                <td>
+                                    @item.CellphoneNo
+                                </td>
+
+                                <td>
+                                    <div class="d-flex justify-content-center">
+                                        @Html.ActionLink("Edit", "AddEditUser", new { id = @item.Id }) @Html.ActionLink("Delete", "Delete", new { id = @item.Id })
+                                    </div>                                    
+                                    @* /@Html.ActionLink("Details", "ProjectDetails", new { basePath = @item.basePath })*@
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </table>
+            </fieldset>
+        </div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
